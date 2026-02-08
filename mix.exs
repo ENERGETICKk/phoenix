@@ -1,9 +1,9 @@
-defmodule Infra.MixProject do
+defmodule Contador.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :infra,
+      app: :contador,
       version: "0.1.0",
       elixir: "~> 1.15",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -20,7 +20,7 @@ defmodule Infra.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {Infra.Application, []},
+      mod: {Contador.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -82,10 +82,10 @@ defmodule Infra.MixProject do
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
       "assets.setup": ["tailwind.install --if-missing", "esbuild.install --if-missing"],
-      "assets.build": ["compile", "tailwind infra", "esbuild infra"],
+      "assets.build": ["compile", "tailwind contador", "esbuild contador"],
       "assets.deploy": [
-        "tailwind infra --minify",
-        "esbuild infra --minify",
+        "tailwind contador --minify",
+        "esbuild contador --minify",
         "phx.digest"
       ],
       precommit: ["compile --warnings-as-errors", "deps.unlock --unused", "format", "test"]

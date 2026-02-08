@@ -1,11 +1,11 @@
 import Config
 
 # Configure your database
-config :infra, Infra.Repo,
+config :contador, Contador.Repo,
   username: "postgres",
   password: "postgres",
   hostname: "localhost",
-  database: "infra_dev",
+  database: "contador_dev",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
@@ -16,17 +16,17 @@ config :infra, Infra.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we can use it
 # to bundle .js and .css sources.
-config :infra, InfraWeb.Endpoint,
+config :contador, ContadorWeb.Endpoint,
   # Binding to loopback ipv4 address prevents access from other machines.
   # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
   http: [ip: {127, 0, 0, 1}],
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
-  secret_key_base: "qJ/owQbe2cw1qcolu1bPF7fwSF8jqe8v45Rj1SX9qppz/9GISD0SGMhW0f3FOl/7",
+  secret_key_base: "tIL6wlR1VYusRgX8lvSn98xmZcVE2kwxG4R1Ow9Eeq4tiYNHNJ93IvxdSQwBgo+D",
   watchers: [
-    esbuild: {Esbuild, :install_and_run, [:infra, ~w(--sourcemap=inline --watch)]},
-    tailwind: {Tailwind, :install_and_run, [:infra, ~w(--watch)]}
+    esbuild: {Esbuild, :install_and_run, [:contador, ~w(--sourcemap=inline --watch)]},
+    tailwind: {Tailwind, :install_and_run, [:contador, ~w(--watch)]}
   ]
 
 # ## SSL Support
@@ -53,7 +53,7 @@ config :infra, InfraWeb.Endpoint,
 # different ports.
 
 # Reload browser tabs when matching files change.
-config :infra, InfraWeb.Endpoint,
+config :contador, ContadorWeb.Endpoint,
   live_reload: [
     web_console_logger: true,
     patterns: [
@@ -62,13 +62,13 @@ config :infra, InfraWeb.Endpoint,
       # Gettext translations
       ~r"priv/gettext/.*\.po$"E,
       # Router, Controllers, LiveViews and LiveComponents
-      ~r"lib/infra_web/router\.ex$"E,
-      ~r"lib/infra_web/(controllers|live|components)/.*\.(ex|heex)$"E
+      ~r"lib/contador_web/router\.ex$"E,
+      ~r"lib/contador_web/(controllers|live|components)/.*\.(ex|heex)$"E
     ]
   ]
 
 # Enable dev routes for dashboard and mailbox
-config :infra, dev_routes: true
+config :contador, dev_routes: true
 
 # Do not include metadata nor timestamps in development logs
 config :logger, :default_formatter, format: "[$level] $message\n"
