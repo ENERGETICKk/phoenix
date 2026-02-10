@@ -18,7 +18,7 @@ defmodule ContadorWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
-    live "/nose", ContadorLive
+    live "/contador", ContadorLive
   end
 
   # Other scopes may use custom stacks.
