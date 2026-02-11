@@ -35,3 +35,11 @@ contador-*.tar
 npm-debug.log
 /assets/node_modules/
 
+
+# --- Ignorar archivos del Editor (VS Code / ElixirLS) ---
+.elixir_ls/
+.vscode/
+
+# --- Ignorar archivos del Sistema Operativo (Mac/Linux) ---
+.DS_Store
+**/.DS_Store
