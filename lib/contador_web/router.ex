@@ -19,6 +19,7 @@ defmodule ContadorWeb.Router do
 
     get "/", PageController, :home
     live "/contador", ContadorLive
+    live "/coche", CocheLive
   end
 
   # Other scopes may use custom stacks.
