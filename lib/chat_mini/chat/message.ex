@@ -5,6 +5,7 @@ defmodule ChatMini.Chat.Message do
   schema "messages" do
     field :content, :string
     field :username, :string
+    field :avatar_url, :string
 
     timestamps(type: :utc_datetime)
   end
@@ -12,7 +13,7 @@ defmodule ChatMini.Chat.Message do
   @doc false
   def changeset(message, attrs) do
     message
-    |> cast(attrs, [:content, :username])
+    |> cast(attrs, [:content, :username, :avatar_url])
     |> validate_required([:content, :username])
   end
 end

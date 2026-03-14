@@ -24,7 +24,7 @@ defmodule ChatMiniWeb.Endpoint do
     at: "/",
     from: :chat_mini,
     gzip: not code_reloading?,
-    only: ChatMiniWeb.static_paths(),
+    only: ChatMiniWeb.static_paths() ++ ~w(uploads),
     raise_on_missing_only: code_reloading?
 
   # Code reloading can be explicitly enabled under the

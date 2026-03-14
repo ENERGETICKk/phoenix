@@ -7,17 +7,31 @@ defmodule ChatMini.Accounts.User do
     field :email, :string
     field :password, :string, virtual: true
     field :password_hash, :string
+    field :avatar_url, :string
 
     timestamps(type: :utc_datetime)
   end
 
   def changeset(user, attrs) do
     user
-    |> cast(attrs, [:username, :email, :password])
-    |> validate_required([:username, :email, :password])
-    |> validate_length(:password, min: 6)
+    |> cast(attrs, [:username, :email, :password, :avatar_url])
+    |> validate_required([:username, :email])
+    |> validate_password()
     |> unique_constraint(:email)
-    |> hash_password()
+  end
+
+  defp validate_password(changeset) do
+    password = get_change(changeset, :password)
+    is_new = is_nil(changeset.data.id)
+
+    if is_new or (password && password != "") do
+      changeset
+      |> validate_required([:password])
+      |> validate_length(:password, min: 6)
+      |> hash_password()
+    else
+      changeset
+    end
   end
 
   defp hash_password(changeset) do
