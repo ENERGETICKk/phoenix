@@ -40,6 +40,7 @@ defmodule ChatMiniWeb.Router do
     pipe_through [:browser, :require_authenticated_user]
 
     live "/chat", ChatLive, :index
+    live "/chat/:id", ChatLive, :index
   end
 
   if Application.compile_env(:chat_mini, :dev_routes) do
