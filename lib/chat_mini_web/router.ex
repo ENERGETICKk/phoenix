@@ -41,6 +41,8 @@ defmodule ChatMiniWeb.Router do
 
     live "/chat", ChatLive, :index
     live "/chat/:id", ChatLive, :index
+    live "/docs", MarkdownLive, :index
+    live "/docs/:filename", MarkdownLive, :index
   end
 
   if Application.compile_env(:chat_mini, :dev_routes) do

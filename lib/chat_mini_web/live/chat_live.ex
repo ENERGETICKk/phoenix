@@ -102,10 +102,19 @@ defmodule ChatMiniWeb.ChatLive do
     ~H"""
     <div class="flex h-screen bg-[#313338] text-[#dbdee1] font-sans overflow-hidden relative">
       <!-- 1. Sidebar Servidores -->
-      <div class="w-[72px] bg-[#1e1f22] flex flex-col items-center py-3 space-y-2 flex-shrink-0">
+      <div class="w-[72px] bg-[#1e1f22] border-r border-black/20 flex flex-col items-center py-3 space-y-2 flex-shrink-0">
         <div class="w-12 h-12 bg-[#5865f2] rounded-[16px] flex items-center justify-center text-white cursor-pointer group relative">
           <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
         </div>
+
+        <!-- Markdown Triangle Icon -->
+        <.link navigate={~p"/docs"} class="w-12 h-12 bg-[#313338] rounded-[24px] hover:rounded-[16px] transition-all duration-200 flex items-center justify-center text-[#dbdee1] hover:bg-[#5865f2] hover:text-white cursor-pointer relative group">
+           <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 22h20L12 2z"/></svg>
+           <div class="absolute left-[72px] bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 pointer-events-none">Docs Editor</div>
+        </.link>
+
+        <div class="w-8 h-[2px] bg-[#35363c] rounded-full mx-4"></div>
+
         <div class="mt-auto mb-4 space-y-4 flex flex-col items-center">
            <button phx-click="toggle_profile" class="w-12 h-12 bg-[#313338] rounded-[24px] hover:rounded-[16px] transition-all duration-200 flex items-center justify-center text-[#23a559] hover:bg-[#23a559] hover:text-white cursor-pointer group relative">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
