@@ -67,7 +67,10 @@ defmodule ChatMini.MixProject do
       {:dns_cluster, "~> 0.2.0"},
       {:bandit, "~> 1.5"},
       {:bcrypt_elixir, "~> 3.0"},
-      {:earmark, "~> 1.4"}
+      {:earmark, "~> 1.4"},
+
+
+      {:ecto_psql_extras, "~> 0.6"},
     ]
   end
 

@@ -173,7 +173,7 @@ defmodule ChatMiniWeb.MarkdownLive do
               ><%= @content %></textarea>
             </div>
             <!-- Preview (Right) -->
-            <div class="w-1/2 h-full overflow-y-auto p-10 bg-white text-[#2e3338] markdown-content">
+            <div class="w-1/1 h-full overflow-y-auto p-10 bg-white text-[#2e3338] markdown-content">
               <%= @html_content %>
             </div>
 
