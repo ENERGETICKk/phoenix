@@ -1,3 +1,4 @@
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/ENERGETICKk/phoenix)
 # Chat Mini PHX con ecto y auth
 
 To start your Phoenix server:
