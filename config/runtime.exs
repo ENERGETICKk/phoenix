@@ -36,7 +36,7 @@ if config_env() == :prod do
   config :chat_mini, ChatMini.Repo,
     ssl: true,
     url: database_url,
-    pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
+    pool_size: String.to_integer(System.get_env("POOL_SIZE") || "2"),
     socket_options: maybe_ipv6,
     ssl_opts: [verify: :verify_none]
 
